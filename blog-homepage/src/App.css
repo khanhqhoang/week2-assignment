@@ -1,0 +1,120 @@
+.App {
+  text-align: center;
+  margin: 10px 80px;
+}
+.title {
+  font-weight: bold;
+  text-align: left;
+  font-size: 14px;
+}
+.titledescription {
+  font-size: 11px;
+  color: rgb(59, 56, 56);
+}
+.showimage2 {
+  height: 190px;
+  width: 160px;
+}
+.showimage3{
+  height: 80px;
+  width: 300px;
+}
+.showimagesmall {
+  height: 30px;
+  width: 30px;
+}
+.container2 {
+  width: 990px;
+  border: solid 2px;
+  background: #f8ddf0;
+  margin-bottom: 1em;
+  grid-gap: 1em;
+  padding: 4px;
+  display: grid;
+  text-align: left;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 220px;
+}
+.container2div {
+  border: solid 2px;
+  margin-bottom: 1em;
+  grid-gap: 1em;
+  padding: 4px;
+  display: grid;
+  grid-template-columns: 10rem 18rem;
+}
+.container3 {
+  border: solid 2px;
+  background: #f8ddf0;
+  margin-bottom: 1em;
+  grid-gap: 1rem;
+  padding: 4px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  text-align: left;
+}
+.container3div {
+  border: solid 2px;
+  display: grid;
+  margin-bottom: 1em;
+  grid-gap: 1rem;
+  padding: 4px;
+  grid-template-columns: 1fr;
+}
+.authordiv {
+  border: solid 1px;
+  display: grid;
+  align-items:flex-start;
+  grid-template-columns: 1fr 1fr 1fr 6fr 1fr;
+}
+.articleinfo2 {
+  border: solid 1px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 20% 45% 35%;
+}
+.articleinfo3 {
+  border: solid 1px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 35% 30% 35%;
+}
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+.bookmark-icon {
+  height: 20px;
+  width: 20px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
