@@ -40,20 +40,14 @@ function Articles({data, colNum}){
         (blog) => {          
             //console.log({blog}); 
             isAudio(blog.hasAudioAvailable); 
-            hasMemberPreview(blog.author.isMediumMember); 
+            hasMemberPreview(blog.memberPreview); 
             return (
                 <div class={containerDivName}>
                     <img src={blog.image} className={showImageName} alt="ShowImage" />
                     <div class={articleinfoName}>
                         <div class="item title">{blog.title}</div>                        
                         <div class="item titledescription">{blog.description}</div>
-                        <div class="authordiv item">
-                            <div id="mPreview" class="titledescription">
-                                * Member Preview
-                            </div>
-                            <div id="audioAvail" class="titledescription">
-                                * Audio Available
-                            </div>
+                        <div class="authordiv item">                        
                             <div class="item">                    
                                 <img src={blog.author.image} className="showimagesmall" alt="ShowImageSmall" />
                             </div>
@@ -73,8 +67,6 @@ function Articles({data, colNum}){
                                         <img src={icon} alt="" />
                                     </a>
                                 </div>
-                                <div class="item">{blog.hasAudioAvailable}</div>
-                                <div class="item">{blog.memberPreview}</div>
                             </div>
                         </div>
                     </div>
