@@ -20,7 +20,7 @@ function isAudio(val){
 function hasMemberPreview(val){
     if (val===false)
     {
-       // document.getElementById("mPreview").display="none";
+        //document.getElementById("mPreview").display="none";
     }
 }
 function Articles({data, colNum}){
@@ -47,7 +47,7 @@ function Articles({data, colNum}){
                     <div class={articleinfoName}>
                         <div class="item title">{blog.title}</div>                        
                         <div class="item titledescription">{blog.description}</div>
-                        <div class="authordiv item">
+                        <div class="authordiv item">                        
                             <div class="item">                    
                                 <img src={blog.author.image} className="showimagesmall" alt="ShowImageSmall" />
                             </div>
@@ -67,8 +67,6 @@ function Articles({data, colNum}){
                                         <img src={icon} alt="" />
                                     </a>
                                 </div>
-                                <div class="item">{blog.hasAudioAvailable}</div>
-                                <div class="item">{blog.memberPreview}</div>
                             </div>
                         </div>
                     </div>
