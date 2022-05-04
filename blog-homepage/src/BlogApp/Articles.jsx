@@ -1,6 +1,39 @@
 import React from 'react';
 import '../App.css';
-import icon from '../graphics/bookmark.PNG'
+import icon from '../graphics/bookmark.PNG';
+
+function AudioTrue()
+{
+    return <p className="titledescription"> * Audio available</p>;
+}
+function AudioFalse()
+{
+    return null;
+}
+function HasAudio(props){
+    const gotAudio = props.gotAudio;
+    if (gotAudio){
+        return <AudioTrue/>;
+    }
+    return <AudioFalse/>;
+}
+function PreviewTrue()
+{
+    return <p className="titledescription"> * Member Preview</p>;
+}
+function PreviewFalse()
+{
+    return null;
+}
+function HasPreview(props){
+    const gotPreview = props.gotPreview;
+    if (gotPreview){
+        return <PreviewTrue/>;
+    }
+    return <PreviewFalse/>;
+}
+
+
 //function to format a given date
 const pDate=(d)=>{
     let pstDate = new Date(d);
@@ -9,20 +42,7 @@ const pDate=(d)=>{
 
     return formattedDate;
 }
-//function to hide or show audioAvail div
-function isAudio(val){
-    if (val===false)
-    {
-        //document.getElementById("audioAvail").display="none";
-    }
-}
-//function to hide or show memberPreview div
-function hasMemberPreview(val){
-    if (val===false)
-    {
-       // document.getElementById("mPreview").display="none";
-    }
-}
+
 function Articles({data, colNum}){
 
     const col = {colNum};
@@ -39,36 +59,37 @@ function Articles({data, colNum}){
     const blogs = data.map(
         (blog) => {          
             //console.log({blog}); 
-            isAudio(blog.hasAudioAvailable); 
-            hasMemberPreview(blog.memberPreview); 
+          
             return (
-                <div class={containerDivName}>
+                <div className={containerDivName}>
                     <img src={blog.image} className={showImageName} alt="ShowImage" />
-                    <div class={articleinfoName}>
-                        <div class="item title">{blog.title}</div>                        
-                        <div class="item titledescription">{blog.description}</div>
-                        <div class="authordiv item">
-                            <div class="item">                    
+                    <div className={articleinfoName}>
+                        <div className="hideshowdiv">
+                            <HasAudio gotAudio={blog.hasAudioAvailable} />
+                            <HasPreview gotPreview={blog.memberPreview} />
+                        </div>                      
+                        <div className="item title">{blog.title}</div>                        
+                        <div className="item titledescription">{blog.description}</div>
+                        <div className="authordiv item">
+                            <div className="item">                    
                                 <img src={blog.author.image} className="showimagesmall" alt="ShowImageSmall" />
                             </div>
-                            <div class="item titledescription">
+                            <div className="item titledescription">
                                 <div>
-                                    <div class="item title">{blog.author.name}</div>
+                                    <div className="item title">{blog.author.name}</div>
                                 </div>
                                 <div>
-                                    <div class="item">
+                                    <div className="item">
                                         {pDate(blog.postedDate)} - {blog.minutesToRead} min read
                                     </div>
                                 </div>
                             </div>
-                            <div class="item" align="left">
-                                <div class="bookmark-icon">
+                            <div className="item" align="left">
+                                <div className="bookmark-icon">
                                     <a href={blog.link}>
                                         <img src={icon} alt="" />
                                     </a>
                                 </div>
-                                <div class="item">{blog.hasAudioAvailable}</div>
-                                <div class="item">{blog.memberPreview}</div>
                             </div>
                         </div>
                     </div>

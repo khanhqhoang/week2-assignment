@@ -5,7 +5,7 @@ function MArticles() {
     const numOfCol = "3";
     return (
         <div>
-            <p class="title">&nbsp;&nbsp;In case you missed it</p>
+            <p className="title">&nbsp;&nbsp;In case you missed it</p>
             <Articles data={missedarticles} colNum={numOfCol}/>
        </div>
     )

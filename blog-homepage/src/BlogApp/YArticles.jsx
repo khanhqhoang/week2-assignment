@@ -5,7 +5,7 @@ function YArticles() {
     const numOfCol = "2";
     return (
         <div>
-            <p class="title">&nbsp;&nbsp;For you</p>
+            <p className="title">&nbsp;&nbsp;For you</p>
             <Articles data={yourarticles} colNum={numOfCol}/>
         </div>
     )
